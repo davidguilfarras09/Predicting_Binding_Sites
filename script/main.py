@@ -26,7 +26,7 @@ def main():
         print(f"Error: file not found -> {pdb_path}")
         sys.exit(1)
         
-    model_path = '/home/yangxin-zhan-du/Escritorio/Predicting_Binding_Sites/model/model.pth'
+    model_path = 'model/model.pth'
     pdb_id = os.path.splitext(os.path.basename(pdb_path))[0]
 
     pdb_file = PDBparser(pdb_path)
