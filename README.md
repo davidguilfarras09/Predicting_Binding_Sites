@@ -2,7 +2,7 @@
 
 This project leverages ESM2, a state-of-the-art protein language model developed by Meta AI, to generate residue-level embeddings from raw protein sequences obtained from the database Biolip. These embeddings are then used as input features for machine/deep learning models trained to predict binding sites,residues that interact with ligands or other proteins. The goal is to accurately identify functional regions of proteins using sequence information and 3D structure.
 
-### `Biolip: The dataset` (see data/README.md)
+### `Biolip: The dataset (see data/README.md)` 
 
 Biolip is a protein database and its ligand/protein interaction, semi-manually curated. It contains more than 989,000 sequences that have been extracted from the Protein Data Bank (PDB) and completed with literature reviews.
 This database is really useful for our project because
@@ -19,7 +19,7 @@ One of the first algorithms to appear was BERT and, similarly, ESM-2 was born de
 Therefore, ESM-2 has been the algorithm we have used to obtain 960 embeddings of each residue of each of the proteins in the Biolip (cleaned) dataset in order to predict a binding site with some confidence.
 
 
-### `Creando nuestro modelo`
+### `Creating our model: model.pth`
 
 After trying some Machine Learning approaches like LightGBM, we saw that our results had quite low and unreliable precision, recall and accuracy. Taking this into account, we decided to create a prediction model based on deep learning which resulted in better results in all aspects.
 # YANG ESCRIBE TU AQUÍ QUE CONTROLAS MÁS SOBRE TODAS LAS ESTADÍSTICAS QUE NOS DA EL MODELO EXACTAMENTE.
