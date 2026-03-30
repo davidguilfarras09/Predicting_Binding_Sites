@@ -47,7 +47,7 @@ As seen in the comparative images, our model is able to predict the binding site
 
 | Figure 1: Predicted 1HSG | Figure 2: Real 1HSG (BioLip) |
 |---|---|
-| ![Predicted](./test1/Fig1_Predicted.png) | ![Real](./test1/Fig2_Real.png) |
+| <img src="./test1/Fig1_Predicted.png" width="350"/> | <img src="./test1/Fig2_Real.png" width="350"/> |
 
 #### Test 1 Conclusion:
 The model is able to predict the binding site reasonably well, although it leaves much to be desired in terms of correctly identifying the constituent residues.
@@ -101,7 +101,7 @@ In this case, our model predicts the binding sites very accurately, substantiall
 
 | Figure 3: Predicted 4HHB | Figure 4: Real 4HHB (BioLip) |
 |---|---|
-| ![Predicted](./test2/Fig1_Predicted.png) | ![Real](./test2/Fig2_Real.png) |
+| <img src="./test2/Fig1_Predicted.png" width="350"/> | <img src="./test2/Fig2_Real.png" width="350"/> |
 
 #### Test 2 Conclusion:
 The model predicts the binding sites with high precision. Although false negatives persist, the detected residues are sufficient to locate the binding sites.
@@ -171,7 +171,7 @@ In this case, the model correctly predicts one of the two binding sites (ATP, ye
 
 | Figure 5: Predicted 1ATP | Figure 6: Real 1ATP (BioLip) |
 |---|---|
-| ![Predicted](./test3/Fig1_Predicted.png) | ![Real](./test3/Fig2_Real.png) |
+| <img src="./test3/Fig1_Predicted.png" width="350"/> | <img src="./test3/Fig2_Real.png" width="350"/> |
 
 #### Test 3 Conclusion:
 The model accurately predicts binding sites of chemical origin (as in the previous tests) but struggles to precisely identify the peptide inhibitor binding site. This outcome was anticipated, as noted earlier. Even so, we do not consider the model's overall performance to be poor.

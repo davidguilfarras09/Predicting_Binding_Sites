@@ -4,3 +4,4 @@ show sticks, binding_E
 color red, binding_E
 select binding_site, binding_E
 zoom binding_site
+
