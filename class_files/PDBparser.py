@@ -43,4 +43,4 @@ class PDBparser:
             df = pd.DataFrame(list(sequences.items()), columns=['chain', 'sequence'])
             df.insert(0, 'pdb_id', pdb_id)
             df['res_nums'] = df['chain'].map(res_nums)  
-            return df)
+            return df
