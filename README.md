@@ -43,3 +43,6 @@ To see exactly what we used to build our model we recommend visiting data/README
 > Computational and structural biotechnology journal, 19, 1750–1758. https://doi.org/10.1016/j.csbj.2021.03.022
 
 > [2] ESM-2 - BioNEMO Framework. (s. f.). https://docs.nvidia.com/bionemo-framework/2.0/models/esm2/
+
+---
+### Example Run-Through
