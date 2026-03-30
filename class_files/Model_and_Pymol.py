@@ -133,6 +133,7 @@ def generate_pymol_script(
         resi_str = "+".join(str(r) for _, r in group)
         lines.append(f"select binding_{chain_id}, chain {chain_id} and resi {resi_str}")
         lines.append(f"show {representation}, binding_{chain_id}")
+        lines.append(f"show dots, binding_{chain_id}")
         lines.append(f"color {color}, binding_{chain_id}")
 
     all_selections = " or ".join(f"binding_{c}" for c in chain_ids_present)
