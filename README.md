@@ -45,17 +45,29 @@ To see exactly what we used to build our model we recommend visiting data/README
 > [2] ESM-2 - BioNEMO Framework. (s. f.). https://docs.nvidia.com/bionemo-framework/2.0/models/esm2/
 
 ---
-### Example Run-Through
+### General tutorial
 
-1. Git clone the repo and create a specific conda environment. Then conda activate and install all dependencies using install with the requirements.txt file. If the packages required are not supported by conda, then install the remaining pacakages with pip. 
+1. Git clone the repo and create a specific conda environment.
+    ```bash
+    git clone "repo link"
+    conda create -n env_name
+    ```
 
-2. Once you have installed all necessary pacakges, run the script "main.py" with the command:
-    - "python main.py pdb_filepath"
+3. Then conda activate and install numpy and pandas using install and pip install the rest of the packages with with the requirements.txt file. 
+    ```bash
+    conda activate env_name
+    conda install numpy pandas
+    pip install -r requirements.txt
+    ```
 
-3. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
+5. Once you have installed all necessary pacakges, run the script "main.py" with the command:
+    ```bash
+    python main.py pdb_filepath
+    ```
 
-
+7. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
 
 #### In the test folder, you can see:
 
 > ![Pymol File for 1HSG](test/test1/1HSG_binding.pml)
+> which can be used for visualization in pymol
