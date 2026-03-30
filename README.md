@@ -23,7 +23,7 @@ This database is really useful for our project because
 
 In recent years, the emergence of NLPs (Natural Language Processing) has been a major technological advance. This success has led to attempts to apply these models to language-like structures, and of course, the biology world is exploring the use of NLP in proteins: these specific models are called pLM (Protein Language Models) [1].
 One of the first algorithms to appear was BERT and, similarly, ESM-2 was born derived from it [1]. This is a pLM developed by Meta AI in 2022, trained with more than 250 million protein sequences. The interesting thing about this model is that it allows capturing the biological semantics of proteins and, therefore, we believe that by using it, ESM-2 will give similar embeddings to amino acids that are binding sites. [2]
-Therefore, ESM-2 has been the algorithm we have used to obtain 960 embeddings of each residue of each of the proteins in the Biolip (cleaned) dataset in order to predict a binding site with some confidence.
+Thus, ESM-2 has been the algorithm we have used to obtain 960 embeddings of each residue of each of the proteins in the Biolip (cleaned) dataset in order to predict a binding site with some confidence.
 
 
 ### `Creating our model: model.pth`

@@ -22,7 +22,6 @@ class ESM:
 
             protein = ESMProtein(sequence=str(row['sequence']))
             protein_tensor = client.encode(protein)
-
             with torch.no_grad():
                 output = client.logits(
                     protein_tensor,
