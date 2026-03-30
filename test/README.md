@@ -42,9 +42,9 @@ Tabla 2: Métricas
 
 Imagenes comparativas: 
 Figura 1: Predicción HSG1
-![Binding Site Prediction](test/test1/Fig1_Predicted.png)
+![Binding Site Prediction](./test1/Fig1_Predicted.png)
 Figura 2: Reales HSG1
-![Binding Site Prediction](test/test1/Fig2_Real.png)
+![Binding Site Prediction](./test1/Fig2_Real.png)
 
 #### Conclusion test 1:
 El modelo es capaz de predecir bien el binding site pese a que deja mucho que desear en cuanto a predicción de los aminoácidos correctos.
