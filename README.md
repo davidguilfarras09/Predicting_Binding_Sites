@@ -46,3 +46,16 @@ To see exactly what we used to build our model we recommend visiting data/README
 
 ---
 ### Example Run-Through
+
+1. Git clone the repo and create a specific conda environment. Then conda activate and install all dependencies using install with the requirements.txt file. If the packages required are not supported by conda, then install the remaining pacakages with pip. 
+
+2. Once you have installed all necessary pacakges, run the script "main.py" with the command:
+    - "python main.py pdb_filepath"
+
+3. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
+
+
+
+#### In the test folder, you can see:
+
+> ![Pymol File for 1HSG](test/test1/1HSG_binding.pml)

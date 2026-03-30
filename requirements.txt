@@ -2,3 +2,5 @@ torch
 biopython
 esm
 httpx
+numpy
+pandas
