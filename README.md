@@ -88,5 +88,5 @@ To see exactly what we used to build our model, we recommend visiting data/READM
 
 #### In the test folder, you can see:
 
-> ![Pymol File for 1HSG](test/test1/1HSG_binding.pml)
+> ![Pymol File for 1HSG](./test/test1/1HSG_binding.pml)
 > which can be used for visualization in pymol

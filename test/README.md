@@ -1,6 +1,6 @@
 # Test
 
-Hay que decir que ya hemos testeado varias proteínas durante la creación de nuestro modelo de deep learning, ya que trabajamos siempre teniendo un test set. Pese a ello, creemos necesario demostrar que nuestro approach funciona correctamente con proteínas que no han sido usadas en ningún momento durante toda la reación de nuestro proyecto.
+It should be noted that we have already tested several proteins during the creation of our deep learning model (see data/), as we always work with a test set. Despite this, we believe it is necessary to demonstrate that our approach works correctly with proteins that have not been used at any point during the entire development of our project.
 
 To test our program we decided to use 3 different proteins. Our testing approach was as follows:
 1) Use proteins of different sizes.
@@ -16,6 +16,8 @@ That is why our chosen proteins are:
 | 1ATP | Kinase (monomer)      | Nucleotide (ATP) + peptide   | 350 aa  | 
 
 In the different images shown throughout, the protein will be highlighted in green, the predicted binding site in red, and the ligand in yellow. As an exception, in the last test (1ATP) two ligands will be marked: one in yellow and another in cyan.
+
+---
 
 ### `Test 1: 1HSG` 
 1HSG is an enzyme from the HIV virus with protease function. It cleaves viral proteins so they can perform their role correctly. It is one of the most studied proteins and is fairly simple.
@@ -55,6 +57,7 @@ As seen in the comparative images, our model is able to predict the binding site
 The model is able to predict the binding site reasonably well, although it leaves much to be desired in terms of correctly identifying the constituent residues.
 
 
+---
 
 ### `Test 2: HBB4`
 HBB4 is hemoglobin, a highly documented protein that contains several heme groups in its structure, which are essential for its function during oxygen transport.
@@ -109,6 +112,7 @@ In this case, our model predicts the binding sites very accurately, substantiall
 The model predicts the binding sites with high precision. Although false negatives persist, the detected residues are sufficient to locate the binding sites.
 
 
+---
 
 ### `Test 3: 1ATP`
 1ATP is a model kinase in cell biology. This protein has two ligand binding sites and will be used to assess how our model handles more challenging proteins. Furthermore, our model was not trained on peptides — one of its ligands — and we want to evaluate how it deals with this limitation.
@@ -168,3 +172,25 @@ In this case, the model correctly predicts one of the two binding sites (ATP, ye
 
 #### Test 3 Conclusion:
 The model accurately predicts binding sites of chemical origin (as in the previous tests) but struggles to precisely identify the peptide inhibitor binding site. This outcome was anticipated, as noted earlier. Even so, we do not consider the model's overall performance to be poor.
+
+
+---
+
+### `Evaluation Metrics Glossary`
+
+
+a) TP (True Positive): A residue the model predicted as a binding site that **actually is** one (confirmed by BioLiP).
+b) FP (False Positive): A residue the model predicted as a binding site that **is not** one (confirmed by BioLiP).
+c) FN (False Negative): A residue the model **did not predict** as a binding site but **is** one (confirmed by BioLiP).
+d) Precision: Out of all predicted residues, how many were correct.
+```
+Precision = TP / (TP + FP)
+```
+e) Recall: Out of all real binding residues, how many the model found.
+```
+Recall = TP / (TP + FN)
+```
+f) F1 Score: Harmonic mean of Precision and Recall. High F1 requires both metrics to perform well.
+```
+F1 = 2 × (Precision × Recall) / (Precision + Recall)
+```
