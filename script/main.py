@@ -14,7 +14,7 @@ from class_files.PDBparser import PDBparser
 from class_files.Model_and_Pymol import MLP, predict_binding_site
 
 def main():
-    
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     if len(sys.argv) < 2:
         print('You need to pass a PDB file')
         sys.exit(1)
@@ -26,7 +26,7 @@ def main():
         print(f"Error: file not found -> {pdb_path}")
         sys.exit(1)
         
-    model_path = '/home/yangxin-zhan-du/Escritorio/Predicting_Binding_Sites/model/model.pth'
+    model_path = os.path.join(BASE_DIR, '../model/model.pth')
     pdb_id = os.path.splitext(os.path.basename(pdb_path))[0]
 
     pdb_file = PDBparser(pdb_path)
@@ -40,7 +40,7 @@ def main():
         df=embeddings_df,
         pdb_path=pdb_path,
         model_path=model_path,
-        threshold=0.384,
+        threshold=0.448,
         radius=8.0,
         min_neighbors=2,
         save_pymol_script=f'{pdb_id}_binding.pml'

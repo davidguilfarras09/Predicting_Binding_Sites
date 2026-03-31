@@ -46,7 +46,7 @@ def predict_binding_residues(
     embeddings_per_chain: dict,
     positions_per_chain: dict,
     model_path: str,
-    threshold: float = 0.384,
+    threshold: float = 0.448,
     input_dim: int = 960,
 ) -> dict:
 
@@ -145,7 +145,7 @@ def predict_binding_site(
     df: pd.DataFrame,
     pdb_path: str,
     model_path: str = "model.pth",
-    threshold: float = 0.384,
+    threshold: float = 0.448,
     radius: float = 8.0,
     min_neighbors: int = 2,
     pymol_color: str = "red",
