@@ -28,16 +28,36 @@ Thus, ESM-2 has been the algorithm we have used to obtain 960 embeddings of each
 
 ### `Creating our model: model.pth`
 
-After trying some Machine Learning approaches like LightGBM, we saw that our results had quite low and unreliable precision, recall and accuracy. Taking this into account, we decided to create a prediction model based on deep learning which resulted in better results in all aspects.
-# YANG ESCRIBE TU AQUÍ QUE CONTROLAS MÁS SOBRE TODAS LAS ESTADÍSTICAS QUE NOS DA EL MODELO EXACTAMENTE.
+First, we applied the filter pipeline described in the ./data folder to obtain a high-quality subset of the dataset. This subset revealed a highly imbalanced class distribution, with a 1:25 ratio of binding to non-binding residues. After exploring several classical Machine Learning approaches, including LightGBM with various balancing strategies, we found that results were inconsistent with low and unreliable precision and recall.
+
+This led us to adopt a deep learning approach, which gived better results across all metrics. Specifically, we use an MLP (Multilayer Perceptron), which is well-suited for high-dimensional inputs like our ESM embeddings. These embeddings encode rich evolutionary and structural information per residue, and the MLP is able to learn the non-linear patterns that separate binding from non-binding residues in that complex space.
+
+To address the class imbalance during training, we use Focal Loss, which automatically down-weights easy examples and forces the model to focus on the hard and ambiguous residues near binding sites.
+
+To ensure reliable and generalizable evaluation, train/test splits are performed at the protein level, grouping all residues from the same PDB structure together. This prevents data leakage, where residues from the same protein could appear in both train and test sets, and ensures the model is evaluated on truly unseen proteins rather than just unseen residues.
+
+Finally, MCC (Matthews Correlation Coefficient)-based threshold tuning is applied to select the optimal decision boundary. Unlike accuracy, MCC accounts for all four classification outcomes and gives a fair and reliable measure of performance under severe class imbalance.
+
+The metrics we've gotten after optimizing the threshold and evaluate the model with the test set was:
+| Metric             | Value  |
+|--------------------|--------|
+| Threshold          | 0.448  |
+| MCC                | 0.6232 |
+| Balanced Accuracy  | 0.8081 |
+| ROC AUC            | 0.9586 |
+| F1 (Weighted)      | 0.9720 |
+| Precision          | 0.6453 |
+| Recall             | 0.6301 |
+| Specificity        | 0.9860 |
+
+The high ROC AUC indicates strong discriminative ability between binding and non-binding residues. The model achieves excellent specificity, meaning it rarely misclassifies non-binding residues as binding. The MCC of 0.6232 provides the most honest overall summary, as it accounts for all four classification outcomes and is robust to the imbalance dataset.
+
+<img width="673" height="468" alt="image" src="https://github.com/user-attachments/assets/16297f43-d0ca-4971-9e6d-028ae2049939" />
 
 
 ### `Final Remarks`
 
-To see exactly what we used to build our model we recommend visiting data/README.md, as we filtered the Biolip dataset in order to reduce unnecessary dimensionality caused by closely related proteins within the dataset. The dimensionality reduction was done in order to lighten the computational power required, as we do not have the necessary resources to run large programs with high complexity.
-
-
-
+To see exactly what we used to build our model, we recommend visiting data/README.md. We filtered the BioLiP dataset to obtain a high-quality subset, which also helped reduce resource consumption. Working with high-dimensional dataframes is computationally demanding, and given our hardware limitations, managing memory and processing power was a significant constraint throughout the project.
 
 > [1] Ofer, D., Brandes, N., & Linial, M. (2021). The language of proteins: NLP, machine learning & protein sequences.
 > Computational and structural biotechnology journal, 19, 1750–1758. https://doi.org/10.1016/j.csbj.2021.03.022

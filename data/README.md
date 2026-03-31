@@ -72,7 +72,7 @@ columns = [
     "sequence"]
 
 df = pd.read_csv('BioLiP_nr.txt', sep='\t', header=None, names=columns)
-print(df.shape)  # (86458, 21)
+print(df.shape)  # (86458, 21) — each row represents a PDB ID
 ```
 
 > Zhang C, Zhang X, Freddolino PL, Zhang Y. **BioLiP2: an updated structure database for
@@ -80,46 +80,34 @@ print(df.shape)  # (86458, 21)
 
 ---
 
-### `pdb_ids_cleaned.tsv`
+## Applied Filters
 
-Subset of PDB IDs derived from BioLiP after a multi-step filtering pipeline to produce
-a clean, non-redundant set suitable for embedding and model training.
+This dataset is a subset of PDB IDs derived from BioLiP, curated through a multi-step filtering pipeline to produce a clean, high-quality set suitable for embedding and model training.
 
-#### Filtering pipeline
+### Filtering Pipeline
 
 | Step | Filter | Criterion |
 |------|--------|-----------|
-| 1 | Molecular weight | Ligands within a valid MW range |
+| 1 | Exclude unsuitable ligands | e.g., metal ions, free amino acids |
 | 2 | Resolution | ≤ 2.0 Å |
-| 3 | Sequence length | Minimum and maximum amino acid length thresholds |
-| 4 | Redundancy removal | ≤ 25% maximum pairwise sequence identity (PISCES) |
+| 3 | Sequence length | Apply minimum and maximum amino acid length thresholds |
+| 4 | Minimum binding sequence residues | Each PDB must have ≥ 8 binding residues |
 
-Redundancy removal was performed with **PISCES**. Sequence identity between PDB entries is
-computed by building a hidden Markov model (HMM) for every unique PDB sequence using
-**HHblits** (Söding et al.), then cross-searching all HMMs with **HHsearch**. This approach
-allows reliable culling at low identity thresholds (15–30%), where simple pairwise alignment
-methods become unreliable.
-
-> Wang G, Dunbrack RL Jr. **PISCES: a protein sequence culling server.**
-> *Bioinformatics*, 19:1589–1591 (2003).
-
-> Söding J, Biegert A, Lupas AN. **The HHpred interactive server for protein homology
-> detection and structure prediction.** *Nucleic Acids Research*, 33:W244–W248 (2005).
-
+The full dataset processing and filtering workflow can be found in this folder in the file: [`dataset-processing.ipynb`](./dataset-processing.ipynb)
 ---
 
-### `model_dataset_cleaned.parquet`
+### `model_dataset_cleaned_V2.parquet`
 
-Final training dataset, built by filtering `BioLiP_nr.txt` to retain only the
-**3,362 proteins** whose PDB IDs passed the cleaning pipeline above.
+Final training dataset, built by filtering process retaining only the
+**5046 proteins** whose PDB IDs passed the cleaning pipeline above.
 
 | Property | Details |
 |----------|---------|
-| Size | ~2 GB |
+| Size | ~3 GB |
 | Format | Apache Parquet |
-| Rows | 1,134,510 |
+| Rows | 1,688,031 |
 | Columns | 964 |
-| Proteins | 3,362 |
+| Proteins | 5046 |
 
 Each **row** represents a single residue from a protein PDB structure.
 
@@ -140,6 +128,6 @@ Each **row** represents a single residue from a protein PDB structure.
 ```python
 import pandas as pd
 
-df = pd.read_parquet('model_dataset_cleaned.parquet')
-print(df.shape)  # (1134510, 964)
+df = pd.read_parquet('model_dataset_cleaned_V2.parquet')
+print(df.shape)  # (1688031, 964)
 ```
