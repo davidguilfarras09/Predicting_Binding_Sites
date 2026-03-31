@@ -42,7 +42,7 @@ def main():
         model_path=model_path,
         threshold=0.448,
         radius=8.0,
-        min_neighbors=2,
+        min_neighbors=1,
         save_pymol_script=f'{pdb_id}_binding.pml'
     )
     return predicted_sites
