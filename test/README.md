@@ -179,9 +179,9 @@ The model accurately predicts binding sites of chemical origin (as in the previo
 ### `Evaluation Metrics Glossary`
 
 
-1) TP (True Positive): A residue the model predicted as a binding site that **actually is** one (confirmed by BioLiP).
-2) FP (False Positive): A residue the model predicted as a binding site that **is not** one (confirmed by BioLiP).
-3) FN (False Negative): A residue the model **did not predict** as a binding site but **is** one (confirmed by BioLiP).
+1) TP (True Positive): A residue the model predicted as a binding site that actually is one (confirmed by BioLiP).
+2) FP (False Positive): A residue the model predicted as a binding site that is not one (confirmed by BioLiP).
+3) FN (False Negative): A residue the model did not predict as a binding site but is one (confirmed by BioLiP).
 4) Precision: Out of all predicted residues, how many were correct.
 ```
 Precision = TP / (TP + FP)
