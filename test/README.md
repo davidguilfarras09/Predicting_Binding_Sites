@@ -179,18 +179,18 @@ The model accurately predicts binding sites of chemical origin (as in the previo
 ### `Evaluation Metrics Glossary`
 
 
-a) TP (True Positive): A residue the model predicted as a binding site that **actually is** one (confirmed by BioLiP).
-b) FP (False Positive): A residue the model predicted as a binding site that **is not** one (confirmed by BioLiP).
-c) FN (False Negative): A residue the model **did not predict** as a binding site but **is** one (confirmed by BioLiP).
-d) Precision: Out of all predicted residues, how many were correct.
+1) TP (True Positive): A residue the model predicted as a binding site that **actually is** one (confirmed by BioLiP).
+2) FP (False Positive): A residue the model predicted as a binding site that **is not** one (confirmed by BioLiP).
+3) FN (False Negative): A residue the model **did not predict** as a binding site but **is** one (confirmed by BioLiP).
+4) Precision: Out of all predicted residues, how many were correct.
 ```
 Precision = TP / (TP + FP)
 ```
-e) Recall: Out of all real binding residues, how many the model found.
+5) Recall: Out of all real binding residues, how many the model found.
 ```
 Recall = TP / (TP + FN)
 ```
-f) F1 Score: Harmonic mean of Precision and Recall. High F1 requires both metrics to perform well.
+6) F1 Score: Harmonic mean of Precision and Recall. High F1 requires both metrics to perform well.
 ```
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
 ```
