@@ -51,10 +51,7 @@ The high ROC AUC indicates strong discriminative ability between binding and non
 
 ### `Final Remarks`
 
-To see exactly what we used to build our model we recommend visiting data/README.md, as we filtered the Biolip dataset in order to reduce unnecessary dimensionality caused by closely related proteins within the dataset. The dimensionality reduction was done in order to lighten the computational power required, as we do not have the necessary resources to run large programs with high complexity.
-
-
-
+To see exactly what we used to build our model, we recommend visiting data/README.md. We filtered the BioLiP dataset to obtain a high-quality subset, which also helped reduce resource consumption. Working with high-dimensional dataframes is computationally demanding, and given our hardware limitations, managing memory and processing power was a significant constraint throughout the project.
 
 > [1] Ofer, D., Brandes, N., & Linial, M. (2021). The language of proteins: NLP, machine learning & protein sequences.
 > Computational and structural biotechnology journal, 19, 1750–1758. https://doi.org/10.1016/j.csbj.2021.03.022
