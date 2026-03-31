@@ -56,7 +56,6 @@ To see exactly what we used to build our model we recommend visiting data/README
 3. Then conda activate and install numpy and pandas using install and pip install the rest of the packages with with the requirements.txt file. 
     ```bash
     conda activate env_name
-    conda install numpy pandas
     pip install -r requirements.txt
     ```
 
