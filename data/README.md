@@ -72,7 +72,7 @@ columns = [
     "sequence"]
 
 df = pd.read_csv('BioLiP_nr.txt', sep='\t', header=None, names=columns)
-print(df.shape)  # (86458, 21)
+print(df.shape)  # (86458, 21) — each row represents a PDB ID
 ```
 
 > Zhang C, Zhang X, Freddolino PL, Zhang Y. **BioLiP2: an updated structure database for
