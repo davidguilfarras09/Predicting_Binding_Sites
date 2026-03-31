@@ -1,5 +1,7 @@
 # Test
 
+Hay que decir que ya hemos testeado varias proteínas durante la creación de nuestro modelo de deep learning, ya que trabajamos siempre teniendo un test set. Pese a ello, creemos necesario demostrar que nuestro approach funciona correctamente con proteínas que no han sido usadas en ningún momento durante toda la reación de nuestro proyecto.
+
 To test our program we decided to use 3 different proteins. Our testing approach was as follows:
 1) Use proteins of different sizes.
 2) Use proteins with different ligands.
@@ -63,13 +65,13 @@ In this case, our model predicts the binding sites very accurately, substantiall
 
 | Residue | Predicted | Real (BioLip) | Match |
 |---------|-----------|---------------|-------|
-| 43      | ❌        | ✅            | —     |
-| 45      | ❌        | ✅            | —     |
+| 42      | ❌        | ✅            | —     |
+| 43      | ✅        | ✅            | ✓     |
+| 45      | ✅        | ✅            | ✓     |
 | 46      | ❌        | ✅            | —     |
-| 42      | ✅        | ✅            | ✓     |
 | 58      | ✅        | ✅            | ✓     |
 | 61      | ✅        | ✅            | ✓     |
-| 62      | ✅        | ✅            | ✓     |
+| 62      | ❌        | ✅            | —     |
 | 87      | ✅        | ✅            | ✓     |
 | 93      | ✅        | ✅            | ✓     |
 | 98      | ❌        | ✅            | —     |
@@ -80,9 +82,9 @@ In this case, our model predicts the binding sites very accurately, substantiall
 
 | Residue | Predicted | Real (BioLip) | Match |
 |---------|-----------|---------------|-------|
-| 41      | ✅        | ✅            | ✓     |
-| 42      | ✅        | ✅            | ✓     |
-| 63      | ❌        | ✅            | —     |
+| 41      | ❌        | ✅            | —     |
+| 42      | ❌        | ✅            | —     |
+| 63      | ✅        | ✅            | ✓     |
 | 66      | ❌        | ✅            | —     |
 | 67      | ✅        | ✅            | ✓     |
 | 92      | ✅        | ✅            | ✓     |
@@ -96,8 +98,8 @@ In this case, our model predicts the binding sites very accurately, substantiall
 |         | TP | FP | FN | Precision | Recall | F1  |
 |---------|----|----|----|-----------|--------|-----|
 | Chain A | 6  | 0  | 6  | 100%      | 50%    | 67% |
-| Chain B | 5  | 0  | 5  | 100%      | 50%    | 67% |
-| Overall | 11 | 0  | 11 | 100%      | 50%    | 67% |
+| Chain B | 4  | 0  | 6  | 100%      | 40%    | 57% |
+| Overall | 10 | 0  | 12 | 100%      | 45%    | 63% |
 
 | Figure 3: Predicted 4HHB | Figure 4: Real 4HHB (BioLip) |
 |---|---|
@@ -112,43 +114,35 @@ The model predicts the binding sites with high precision. Although false negativ
 1ATP is a model kinase in cell biology. This protein has two ligand binding sites and will be used to assess how our model handles more challenging proteins. Furthermore, our model was not trained on peptides — one of its ligands — and we want to evaluate how it deals with this limitation.
 In this case, the model correctly predicts one of the two binding sites (ATP, yellow). The binding site of the peptide inhibitor (cyan) is not predicted as accurately.
 
-#### Table 1: Comparative
+#### Table 1: Comparative — Chain E (1ATP)
 
 | Residue | Predicted | Real (BioLip) | Match |
 |---------|-----------|---------------|-------|
 | 49      | ✅        | ❌            | —     |
-| 51      | ✅        | ✅            | ✓     |
-| 52      | ✅        | ❌            | —     |
-| 53      | ✅        | ✅            | ✓     |
-| 54      | ✅        | ✅            | ✓     |
-| 55      | ✅        | ❌            | —     |
-| 57      | ✅        | ❌            | —     |
+| 50      | ✅        | ❌            | —     |
+| 51      | ❌        | ✅            | —     |
+| 53      | ❌        | ✅            | —     |
+| 54      | ❌        | ✅            | —     |
 | 70      | ✅        | ❌            | —     |
 | 72      | ✅        | ❌            | —     |
 | 82      | ❌        | ✅            | —     |
 | 83      | ❌        | ✅            | —     |
-| 87      | ✅        | ❌            | —     |
-| 118     | ✅        | ❌            | —     |
 | 120     | ✅        | ❌            | —     |
-| 121     | ✅        | ❌            | —     |
 | 122     | ✅        | ❌            | —     |
 | 127     | ✅        | ✅            | ✓     |
 | 129     | ❌        | ✅            | —     |
 | 133     | ❌        | ✅            | —     |
-| 164     | ✅        | ❌            | —     |
-| 166     | ✅        | ❌            | —     |
-| 168     | ✅        | ✅            | ✓     |
+| 168     | ❌        | ✅            | —     |
 | 169     | ❌        | ✅            | —     |
-| 170     | ❌        | ✅            | —     |
+| 170     | ✅        | ✅            | ✓     |
 | 171     | ✅        | ❌            | —     |
 | 173     | ✅        | ❌            | —     |
+| 183     | ✅        | ❌            | —     |
 | 184     | ✅        | ❌            | —     |
-| 186     | ✅        | ❌            | —     |
 | 187     | ✅        | ✅            | ✓     |
-| 200     | ✅        | ✅            | ✓     |
-| 201     | ✅        | ✅            | ✓     |
+| 200     | ❌        | ✅            | —     |
+| 201     | ❌        | ✅            | —     |
 | 203     | ❌        | ✅            | —     |
-| 205     | ✅        | ❌            | —     |
 | 230     | ❌        | ✅            | —     |
 | 235     | ❌        | ✅            | —     |
 | 236     | ❌        | ✅            | —     |
@@ -157,17 +151,16 @@ In this case, the model correctly predicts one of the two binding sites (ATP, ye
 | 241     | ❌        | ✅            | —     |
 | 330     | ❌        | ✅            | —     |
 
-### Table 2: Metrics
+#### Table 2: Metrics
 
 | Metric    | Value |
 |-----------|-------|
-| TP        | 8     |
-| FP        | 18    |
-| FN        | 14    |
-| Precision | 31%   |
-| Recall    | 36%   |
-| F1 Score  | 33%   |
-
+| TP        | 3     |
+| FP        | 10    |
+| FN        | 19    |
+| Precision | 23%   |
+| Recall    | 14%   |
+| F1 Score  | 17%   |
 
 | Figure 5: Predicted 1ATP | Figure 6: Real 1ATP (BioLip) |
 |---|---|
