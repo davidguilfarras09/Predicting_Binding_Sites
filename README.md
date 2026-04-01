@@ -125,7 +125,7 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
 ```bash
     python ./script/main.py ./test/test1/1HSG.pdb
 ```
-7. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
+4. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
 
 #### In the test folder, you can see:
 
