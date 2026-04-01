@@ -126,7 +126,17 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
     python ./script/main.py ./test/test1/1HSG.pdb
 ```
 4. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
+   
+### How to install the package
+1. From the root of the repository (where `pyproject.toml` is located), install the package:
+```bash
+    pip install -e .
+```
 
+2. Verify the installation:
+```bash
+    pip show predicting-binding-sites
+```
 #### In the test folder, you can see:
 
 > Pymol File for 1HSG
