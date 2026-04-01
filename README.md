@@ -94,8 +94,9 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
 ---
 ---
 
-### General tutorial
+### General tutorial (both with package install and without)
 
+#### Running the script without installing the package: 
 1. Git clone the repo and create a specific conda environment.
     ```bash
     git clone "repo link"
@@ -111,6 +112,11 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
 5. Once you have installed all necessary pacakges, run the script "main.py" with the command:
     ```bash
     python main.py pdb_filepath
+    ```
+
+#### With the Package installed (you ran "pip install -e ."):
+    ```bash
+        pbs pdb_filepath 
     ```
     help(main) #documentation of the function
 
