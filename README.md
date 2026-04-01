@@ -114,7 +114,7 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
     ```
     help(main) #documentation of the function
 
-       **Arguments:**
+   **Arguments:**
     | Argument | Type | Description |
     |---|---|---|
     | `pdb_filepath` | `str` | Path to the input `.pdb` file (e.g., `data/1HSG.pdb`) |
