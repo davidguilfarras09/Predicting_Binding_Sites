@@ -1,17 +1,9 @@
-from itertools import groupby
-from Bio.PDB import PDBParser as BioPDBParser
 import os
-import pandas as pd
-import numpy as np
-import torch
 import sys
-import torch.nn as nn
-from esm.models.esmc import ESMC
-from esm.sdk.api import ESMProtein, LogitsConfig
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from class_files.ESM import ESM
 from class_files.PDBparser import PDBparser
-from class_files.Model_and_Pymol import MLP, predict_binding_site
+from class_files.Model_and_Pymol import predict_binding_site
 
 def main():
     """
