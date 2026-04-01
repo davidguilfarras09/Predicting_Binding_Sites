@@ -102,7 +102,7 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
     conda create -n env_name
     ```
 
-3. Then conda activate and install numpy and pandas using install and pip install the rest of the packages with with the requirements.txt file. 
+3. Then conda activate and pip install the packages with the requirements.txt file. 
     ```bash
     conda activate env_name
     pip install -r requirements.txt
@@ -112,7 +112,19 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
     ```bash
     python main.py pdb_filepath
     ```
+    help(main) #documentation of the function
 
+       **Arguments:**
+    | Argument | Type | Description |
+    |---|---|---|
+    | `pdb_filepath` | `str` | Path to the input `.pdb` file (e.g., `data/1HSG.pdb`) |
+
+    **Output:** A PyMOL script named `<PDB_id>_binding.pml` saved to the current directory.
+   
+    **Example:**
+```bash
+    python ./script/main.py ./test/test1/1HSG.pdb
+```
 7. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
 
 #### In the test folder, you can see:
