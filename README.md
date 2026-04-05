@@ -114,24 +114,36 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
     python main.py pdb_filepath
     ```
 
-#### With the Package installed (you ran "pip install -e ."):
-    ```bash
-        pbs pdb_filepath 
-    ```
-    help(main) #documentation of the function
+#### With the Package Installed
+```bash
+    pbs pdb_filepath
+```
+---
 
-   **Arguments:**
-    | Argument | Type | Description |
-    |---|---|---|
-    | `pdb_filepath` | `str` | Path to the input `.pdb` file (e.g., `data/1HSG.pdb`) |
+#### Function Documentation
+```python
+    help(main)
+```
 
-    **Output:** A PyMOL script named `<PDB_id>_binding.pml` saved to the current directory.
-   
-    **Example:**
+**Arguments:**
+
+| Argument | Type | Description |
+|---|---|---|
+| `pdb_filepath` | `str` | Path to the input `.pdb` file (e.g., `data/1HSG.pdb`) |
+
+**Output:**
+
+A PyMOL script named `<PDB_id>_binding.pml` saved to the current directory.
+
+**Example:**
 ```bash
     python ./script/main.py ./test/test1/1HSG.pdb
 ```
-4. The script will output a file for pymol with the format PDB_id_binding.pml that you can open either in a text editor to view the predicted binding sites, or you can open in pymol for a visual confirmation.
+```bash
+    pbs ./test/test1/1HSG.pdb
+```
+
+The script outputs a `.pml` file that can be opened in a text editor to inspect predicted binding site residues, or loaded directly into PyMOL for visual confirmation.
    
 ### How to install the package
 1. From the root of the repository (where `pyproject.toml` is located), install the package:
