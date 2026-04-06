@@ -106,6 +106,7 @@ subset, which also helped reduce resource consumption. Working with high-dimensi
 3. Then conda activate and pip install the packages with the requirements.txt file. 
     ```bash
     conda activate env_name
+    conda install pip
     pip install -r requirements.txt
     ```
 
